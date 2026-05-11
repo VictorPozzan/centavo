@@ -1,0 +1,489 @@
+> nx run api:serve:development
+
+[36m⠋[39m [2K[1G[36m⠙[39m [2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (afb4f60ff97252a3)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/ae7302e5-d509-4d1a-bdf1-91db94ef982c
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 9683  - [39m05/11/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 9683  - [39m05/11/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +4ms[39m
+[32m[Nest] 9683  - [39m05/11/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAppController {/api}:[39m[38;5;3m +3ms[39m
+[32m[Nest] 9683  - [39m05/11/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/api, GET} route[39m[38;5;3m +2ms[39m
+[32m[Nest] 9683  - [39m05/11/2026, 4:53:35 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+[32m[Nest] 9683  - [39m05/11/2026, 4:53:35 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠦[39m [2K[1G
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+[1m[31mERROR[39m[22m in [1m./src/app/app.module.ts[39m[22m [1m[32m6:25-52[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './app.controller' in '/home/victor/repos/centavo/apps/api/src/app'[39m[22m
+
+[1m[31mERROR[39m[22m in [1m./src/app/app.module.ts:2:31[39m[22m
+[90mTS2307: [39mCannot find module './app.controller' or its corresponding type declarations.
+  [0m [90m 1 |[39m [36mimport[39m { [33mModule[39m } [36mfrom[39m [32m'@nestjs/common'[39m[33m;[39m
+  [31m[1m>[22m[39m[90m 2 |[39m [36mimport[39m { [33mAppController[39m } [36mfrom[39m [32m'./app.controller'[39m[33m;[39m
+   [90m   |[39m                               [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m
+   [90m 3 |[39m [36mimport[39m { [33mAppService[39m } [36mfrom[39m [32m'./app.service'[39m[33m;[39m
+   [90m 4 |[39m
+   [90m 5 |[39m [33m@[39m[33mModule[39m({[0m
+
+webpack compiled with [1m[31m2 errors[39m[22m (53ade765e44f400f)
+
+[2m[31m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[31m NX [39m[22m[27m  [31mRunning target [1mbuild[22m for project api failed[39m
+
+[2mFailed tasks:[22m
+
+[2m-[22m api:build:development
+
+[2mHint: run the command with[22m --verbose [2mfor more details.[22m
+
+[1m[31mBuild failed, waiting for changes to restart...[39m[22m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 3 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 3 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠧[39m [2K[1G
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (54fd527cdafd7d10)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/e8fe46c8-1079-41a6-9683-73ac874b25b7
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 15651  - [39m05/11/2026, 5:16:01 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 15651  - [39m05/11/2026, 5:16:01 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +6ms[39m
+[32m[Nest] 15651  - [39m05/11/2026, 5:16:01 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+[32m[Nest] 15651  - [39m05/11/2026, 5:16:01 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (54fd527cdafd7d10)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/0d5c0502-8f4e-4623-aaea-53eeb2791bf4
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 19262  - [39m05/11/2026, 5:19:04 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 19262  - [39m05/11/2026, 5:19:04 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +4ms[39m
+[32m[Nest] 19262  - [39m05/11/2026, 5:19:04 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+[32m[Nest] 19262  - [39m05/11/2026, 5:19:04 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (54fd527cdafd7d10)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/75ed8a77-6162-4165-9c54-e5196d255798
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 19640  - [39m05/11/2026, 5:19:13 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 19640  - [39m05/11/2026, 5:19:13 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +7ms[39m
+[32m[Nest] 19640  - [39m05/11/2026, 5:19:13 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +11ms[39m
+[32m[Nest] 19640  - [39m05/11/2026, 5:19:13 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 4 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G
+[2m> [22m[2mnx run[22m api:build:development  [2m[existing outputs match the cache, left as is][22m
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (54fd527cdafd7d10)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+[2mNx read the output from the cache instead of running the command for 1 out of 1 tasks.[22m
+
+[1m[31mDebugger listening on ws://localhost:9229/b979bfe2-199b-41c5-8894-baa3e93d47fd
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 20055  - [39m05/11/2026, 5:19:21 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 20055  - [39m05/11/2026, 5:19:21 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +5ms[39m
+[32m[Nest] 20055  - [39m05/11/2026, 5:19:21 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +9ms[39m
+[32m[Nest] 20055  - [39m05/11/2026, 5:19:21 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 4 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 4 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 3 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠏[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (54fd527cdafd7d10)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/4ed57312-ddaa-4584-8690-bb8add70d2cf
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 20532  - [39m05/11/2026, 5:19:29 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 20532  - [39m05/11/2026, 5:19:29 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +4ms[39m
+[32m[Nest] 20532  - [39m05/11/2026, 5:19:29 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+[32m[Nest] 20532  - [39m05/11/2026, 5:19:29 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (54fd527cdafd7d10)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/f5638dde-ae51-46b2-8135-4d0a08526f95
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 22554  - [39m05/11/2026, 5:23:08 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 22554  - [39m05/11/2026, 5:23:08 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +5ms[39m
+[32m[Nest] 22554  - [39m05/11/2026, 5:23:08 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +2ms[39m
+[32m[Nest] 22554  - [39m05/11/2026, 5:23:08 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (54fd527cdafd7d10)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/d09be107-d5b2-4e8d-b671-432b4fcfaeb6
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 22933  - [39m05/11/2026, 5:23:21 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 22933  - [39m05/11/2026, 5:23:21 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +7ms[39m
+[32m[Nest] 22933  - [39m05/11/2026, 5:23:21 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +3ms[39m
+[32m[Nest] 22933  - [39m05/11/2026, 5:23:21 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (54fd527cdafd7d10)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/8d2d5eb5-4a8d-47e0-911e-0d7e41ce5cbb
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 23361  - [39m05/11/2026, 5:23:46 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 23361  - [39m05/11/2026, 5:23:46 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +7ms[39m
+[32m[Nest] 23361  - [39m05/11/2026, 5:23:46 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +7ms[39m
+[32m[Nest] 23361  - [39m05/11/2026, 5:23:46 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 4 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠧[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠇[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠙[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠦[39m [2K[1G
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (54fd527cdafd7d10)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/444ef641-c195-4481-ac5d-d5c48cf2401a
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 23896  - [39m05/11/2026, 5:23:55 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 23896  - [39m05/11/2026, 5:23:55 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +9ms[39m
+[32m[Nest] 23896  - [39m05/11/2026, 5:23:55 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +4ms[39m
+[32m[Nest] 23896  - [39m05/11/2026, 5:23:55 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 3 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/eslint/plugin
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[2K[1G[36m⠇[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠏[39m [2K[1G[36m⠋[39m Creating project graph nodes with 4 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 4 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 4 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 4 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 4 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json
+  - nx/core/project-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m [2K[1G[36m⠦[39m [2K[1G[36m⠧[39m [2K[1G[36m⠇[39m [2K[1G[36m⠏[39m Creating project graph nodes with 3 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠋[39m Creating project graph nodes with 3 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 3 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 3 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 3 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin
+  - nx/core/package-json[2K[1G[1A[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with @nx/webpack/plugin[36m⠋[39m Creating project graph nodes with 2 plugins
+  - @nx/webpack/plugin
+  - nx/core/package-json[2K[1G[36m⠴[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠦[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠹[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠸[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠼[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠴[39m Creating project graph nodes with @nx/webpack/plugin[2K[1G[36m⠋[39m [2K[1G[36m⠦[39m [2K[1G[2K[1G
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (5ceec1b97b974dbc)
+webpack compiled [1m[32msuccessfully[39m[22m (5ceec1b97b974dbc)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/4daa2c98-b4cf-4a37-b6a5-25adbd2804f1
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 24857  - [39m05/11/2026, 5:24:31 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 24857  - [39m05/11/2026, 5:24:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +14ms[39m
+[32m[Nest] 24857  - [39m05/11/2026, 5:24:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 24857  - [39m05/11/2026, 5:24:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 24857  - [39m05/11/2026, 5:24:31 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 24857  - [39m05/11/2026, 5:24:31 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +50ms[39m
+[32m[Nest] 24857  - [39m05/11/2026, 5:24:31 PM [32m    LOG[39m [32m🚀 Application is running on: http://localhost:3333/api[39m
+
+[7m[1m[36m NX [39m[22m[27m [1mFile change detected. Restarting...[22m
+
+[36m⠋[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠙[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠹[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠸[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠼[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠴[39m Creating project graph nodes with 2 plugins
+  - @nx/eslint/plugin
+  - @nx/webpack/plugin[2K[1G[1A[2K[1G[1A[2K[1G[36m⠦[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠧[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠇[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠏[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠋[39m Creating project graph nodes with @nx/eslint/plugin[2K[1G[36m⠙[39m [2K[1G
+[2m> [22m[2mnx run[22m api:build:development
+
+> webpack-cli build --node-env=development
+
+webpack compiled [1m[32msuccessfully[39m[22m (858cae1541e3a677)
+
+[2m[32m———————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————[39m[22m
+
+[7m[1m[32m NX [39m[22m[27m  [32mSuccessfully ran target [1mbuild[22m for project api[39m
+
+
+[1m[31mDebugger listening on ws://localhost:9229/bedcc258-1ea4-4fda-940f-2ebf2e75c68b
+For help, see: https://nodejs.org/en/docs/inspector
+[39m[22m
+[32m[Nest] 25479  - [39m05/11/2026, 5:25:32 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 25479  - [39m05/11/2026, 5:25:32 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +14ms[39m
+[32m[Nest] 25479  - [39m05/11/2026, 5:25:32 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 25479  - [39m05/11/2026, 5:25:32 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigHostModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 25479  - [39m05/11/2026, 5:25:32 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mConfigModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 25479  - [39m05/11/2026, 5:25:32 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +158ms[39m
+[32m[Nest] 25479  - [39m05/11/2026, 5:25:32 PM [32m    LOG[39m [32m🚀 Centavo API running on: http://localhost:3333/api[39m
