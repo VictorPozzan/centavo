@@ -2,16 +2,40 @@
 
 Personal finance manager with multi-format import (OFX, CSV, manual). Built as a portfolio project to demonstrate fullstack development with Angular and NestJS.
 
+> Currently under active development
+
+## Highlights
+
+- **Single-page app** built with Angular 21, signals, and standalone components
+- **REST API** built with NestJS 11 and Prisma 6
+- **Multi-user** with JWT authentication and rotating refresh tokens
+- **Architecture Decision Records** documenting every non-trivial decision
+- **Mobile-first**, dark-themed UI built from scratch, no UI library
+
+## Screenshots
+
+<table>
+  <tr>
+    <td><img src="./docs/screenshots/login.png" alt="Login screen" width="400"/></td>
+    <td><img src="./docs/screenshots/register.png" alt="Register screen" width="400"/></td>
+  </tr>
+  <tr>
+    <td align="center"><strong>Login</strong></td>
+    <td align="center"><strong>Register</strong></td>
+  </tr>
+</table>
+
 
 ## Stack
 
-| Layer       | Tech                                    |
-|-------------|-----------------------------------------|
-| Frontend    | Angular 20 (standalone, signals), SCSS  |
-| Backend     | NestJS 11, Prisma 6, PostgreSQL 16      |
-| Auth        | JWT with refresh tokens                 |
-| Monorepo    | Nx                                      |
-| Testing     | Jest                                    |
+| Layer       | Tech                                          |
+|-------------|-----------------------------------------------|
+| Frontend    | Angular 21 (standalone, signals, zoneless)    |
+| Backend     | NestJS 11, Prisma 6, PostgreSQL 16            |
+| Auth        | JWT (15min) + rotating refresh tokens (7d)    |
+| Monorepo    | Nx with shared TypeScript types               |
+| Styling     | SCSS + CSS variables (no UI library)          |
+| Testing     | Jest (backend unit tests)                     |
 
 ## Architecture
 
