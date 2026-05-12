@@ -39,3 +39,7 @@ coverage/
 imports/
 extratos/
 data/
+
+# Nx
+.nx/cache
+.nx/workspace-data
