@@ -43,7 +43,7 @@ If a decision is later replaced, mark the old ADR as `Superseded by ADR-XXXX` in
 | [0002](./0002-use-prisma-as-orm.md) | Use Prisma as the ORM | Accepted | 2026-05-11 |
 | [0003](./0003-use-argon2id-for-password-hashing.md) | Use Argon2id for password hashing | Accepted | 2026-05-11 |
 | [0004](./0004-rotating-refresh-tokens-with-sha256.md) | Rotating refresh tokens hashed with SHA-256 | Accepted | 2026-05-11 |
-
+| [0005](./0005-query-level-user-isolation.md) | Query-level user isolation | Accepted | 2026-05-12 |
 
 ## Architecture Decisions
 
@@ -53,3 +53,4 @@ Major architectural decisions are documented as [Architecture Decision Records](
 - [ADR-0002](./docs/adr/0002-use-prisma-as-orm.md) — Why Prisma instead of TypeORM
 - [ADR-0003](./docs/adr/0003-use-argon2id-for-password-hashing.md) — Why Argon2id instead of bcrypt
 - [ADR-0004](./docs/adr/0004-rotating-refresh-tokens-with-sha256.md) — Why rotating refresh tokens hashed with SHA-256
+- [ADR-0005](./docs/adr/0005-query-level-user-isolation.md) — Why query-level user isolation instead of RLS or Prisma extensions
