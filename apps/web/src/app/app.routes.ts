@@ -30,7 +30,16 @@ export const appRoutes: Route[] = [
         loadComponent: () =>
           import('./features/dashboard/dashboard.page').then((m) => m.DashboardPage),
       },
-      // outras rotas vêm nas próximas fases
+      {
+        path: 'accounts',
+        loadComponent: () =>
+          import('./features/accounts/accounts.page').then((m) => m.AccountsPage),
+      },
+      {
+        path: 'categories',
+        loadComponent: () =>
+          import('./features/categories/categories.page').then((m) => m.CategoriesPage),
+      },
     ],
   },
   { path: '**', redirectTo: 'dashboard' },
