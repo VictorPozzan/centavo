@@ -139,4 +139,52 @@ import {
         throw new BadRequestException(`Category ${categoryId} not found`);
       }
     }
+
+    async getSummary(
+      userId: string,
+      filters: ListTransactionsDto,
+    ): Promise<{
+      income: string;
+      expense: string;
+      net: string;
+      incomeCount: number;
+      expenseCount: number;
+    }> {
+      const where: Prisma.TransactionWhereInput = {
+        userId,
+        ...(filters.accountId && { accountId: filters.accountId }),
+        ...(filters.categoryId && { categoryId: filters.categoryId }),
+        ...((filters.startDate || filters.endDate) && {
+          date: {
+            ...(filters.startDate && { gte: filters.startDate }),
+            ...(filters.endDate && { lte: filters.endDate }),
+          },
+        }),
+      };
+    
+      const [incomeAgg, expenseAgg] = await this.prisma.$transaction([
+        this.prisma.transaction.aggregate({
+          where: { ...where, type: 'INCOME' },
+          _sum: { amount: true },
+          _count: true,
+        }),
+        this.prisma.transaction.aggregate({
+          where: { ...where, type: 'EXPENSE' },
+          _sum: { amount: true },
+          _count: true,
+        }),
+      ]);
+    
+      const income = incomeAgg._sum.amount ?? new Prisma.Decimal(0);
+      const expense = expenseAgg._sum.amount ?? new Prisma.Decimal(0);
+      const net = income.minus(expense);
+    
+      return {
+        income: income.toFixed(2),
+        expense: expense.toFixed(2),
+        net: net.toFixed(2),
+        incomeCount: incomeAgg._count,
+        expenseCount: expenseAgg._count,
+      };
+    }
   }

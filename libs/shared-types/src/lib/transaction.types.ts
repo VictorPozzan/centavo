@@ -48,3 +48,11 @@ export interface PaginatedTransactions {
   limit: number;
   offset: number;
 }
+
+export interface TransactionSummary {
+  income: string;
+  expense: string;
+  net: string;
+  incomeCount: number;
+  expenseCount: number;
+}

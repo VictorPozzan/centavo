@@ -66,4 +66,13 @@ import {
     ) {
       return this.transactionsService.remove(userId, id);
     }
+
+    @Get('summary')
+    getSummary(
+    @CurrentUser('sub') userId: string,
+    @Query() filters: ListTransactionsDto,
+    ) {
+      return this.transactionsService.getSummary(userId, filters);
+    }
+    
   }

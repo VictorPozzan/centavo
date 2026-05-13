@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
-import { CentavoCurrencyPipe } from '../../../shared/pipes/currency.pipe';
+import { CentavoCurrencyPipe } from '../../../shared/pipes/currency.pipe.';
 import { formatDate } from '../../../shared/utils/format';
 import type { Transaction } from '@centavo/shared-types';
 
