@@ -8,6 +8,7 @@ import type {
   PaginatedTransactions,
   Transaction,
   UpdateTransactionPayload,
+  TransactionSummary
 } from '@centavo/shared-types';
 
 @Injectable({ providedIn: 'root' })
@@ -19,6 +20,7 @@ export class TransactionsService {
   private readonly _total = signal(0);
   private readonly _loading = signal(false);
   private readonly _loadingMore = signal(false);
+  private readonly _summary = signal<TransactionSummary | null>(null);
 
   readonly transactions = this._transactions.asReadonly();
   readonly total = this._total.asReadonly();
@@ -26,6 +28,7 @@ export class TransactionsService {
   readonly loadingMore = this._loadingMore.asReadonly();
   readonly count = computed(() => this._transactions().length);
   readonly hasMore = computed(() => this.count() < this._total());
+  readonly summary = this._summary.asReadonly();
 
   /**
    * Loads the first page of results, replacing the current list.
@@ -118,5 +121,17 @@ export class TransactionsService {
     if (filters.limit !== undefined) params = params.set('limit', String(filters.limit));
     if (filters.offset !== undefined) params = params.set('offset', String(filters.offset));
     return params;
+  }
+
+  loadSummary(filters: ListTransactionsQuery = {}) {
+    return this.http
+      .get<TransactionSummary>(`${this.apiConfig.baseUrl}/transactions/summary`, {
+        params: this.buildParams({ ...filters, limit: undefined, offset: undefined }),
+      })
+      .pipe(
+        tap((summary) => {
+          this._summary.set(summary);
+        }),
+      );
   }
 }

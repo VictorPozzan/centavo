@@ -41,6 +41,14 @@ import {
       return this.transactionsService.findAll(userId, filters);
     }
   
+    @Get('summary')
+    getSummary(
+    @CurrentUser('sub') userId: string,
+    @Query() filters: ListTransactionsDto,
+    ) {
+      return this.transactionsService.getSummary(userId, filters);
+    }
+
     @Get(':id')
     findOne(
       @CurrentUser('sub') userId: string,
@@ -67,12 +75,5 @@ import {
       return this.transactionsService.remove(userId, id);
     }
 
-    @Get('summary')
-    getSummary(
-    @CurrentUser('sub') userId: string,
-    @Query() filters: ListTransactionsDto,
-    ) {
-      return this.transactionsService.getSummary(userId, filters);
-    }
-    
+
   }
