@@ -6,21 +6,27 @@ import {
     signal,
   } from '@angular/core';
   import { CommonModule } from '@angular/common';
+  import { ModalComponent } from '../../shared/ui/modal/modal.component';
   import { ConfirmDialogComponent } from '../../shared/ui/confirm-dialog/confirm-dialog.component';
   import { EmptyStateComponent } from '../../shared/ui/empty-state/empty-state.component';
   import { ToastService } from '../../shared/ui/toast/toast.service';
   import { TransactionsService } from './transactions.service';
   import { TransactionListComponent } from './components/transaction-list.component';
-  import type { Transaction } from '@centavo/shared-types';
+  import { TransactionFormComponent } from './components/transaction-form.component';
+  import type { CreateTransactionPayload, Transaction } from '@centavo/shared-types';
+  
+  type Mode = 'create' | 'edit' | null;
   
   @Component({
     selector: 'app-transactions-page',
     standalone: true,
     imports: [
       CommonModule,
+      ModalComponent,
       ConfirmDialogComponent,
       EmptyStateComponent,
       TransactionListComponent,
+      TransactionFormComponent,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
     template: `
@@ -70,6 +76,20 @@ import {
         }
       }
   
+      @if (mode() !== null) {
+        <app-modal
+          [title]="mode() === 'create' ? 'New transaction' : 'Edit transaction'"
+          (dismiss)="closeModal()"
+        >
+          <app-transaction-form
+            [transaction]="editing()"
+            [saving]="saving()"
+            (submit)="onSubmit($event)"
+            (cancel)="closeModal()"
+          />
+        </app-modal>
+      }
+  
       @if (toDelete()) {
         <app-confirm-dialog
           title="Delete transaction"
@@ -91,6 +111,9 @@ import {
     protected readonly transactionsService = inject(TransactionsService);
     private readonly toast = inject(ToastService);
   
+    protected readonly mode = signal<Mode>(null);
+    protected readonly editing = signal<Transaction | null>(null);
+    protected readonly saving = signal(false);
     protected readonly toDelete = signal<Transaction | null>(null);
   
     ngOnInit(): void {
@@ -106,13 +129,40 @@ import {
     }
   
     openCreate(): void {
-      // Implementaremos na sub-fase 2.3.c
-      this.toast.info('Transaction form coming next.');
+      this.editing.set(null);
+      this.mode.set('create');
     }
   
     openEdit(transaction: Transaction): void {
-      // Implementaremos na sub-fase 2.3.c
-      this.toast.info('Transaction form coming next.');
+      this.editing.set(transaction);
+      this.mode.set('edit');
+    }
+  
+    closeModal(): void {
+      this.mode.set(null);
+      this.editing.set(null);
+    }
+  
+    onSubmit(payload: CreateTransactionPayload): void {
+      this.saving.set(true);
+  
+      const operation = this.editing()
+        ? this.transactionsService.update(this.editing()!.id, payload)
+        : this.transactionsService.create(payload);
+  
+      operation.subscribe({
+        next: () => {
+          this.saving.set(false);
+          this.toast.success(
+            this.editing() ? 'Transaction updated.' : 'Transaction created.',
+          );
+          this.closeModal();
+        },
+        error: () => {
+          this.saving.set(false);
+          this.toast.error('Something went wrong. Please try again.');
+        },
+      });
     }
   
     confirmRemove(transaction: Transaction): void {

@@ -1,0 +1,60 @@
+:host {
+    display: block;
+  }
+  
+  .form-row {
+    display: grid;
+    gap: var(--space-3);
+    grid-template-columns: 1fr;
+  
+    &.form-row-2 {
+      @media (min-width: 480px) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+  
+  .type-toggle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    padding: var(--space-1);
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  
+  .type-btn {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background-color: transparent;
+    transition: var(--transition-fast);
+  
+    &.is-active {
+      background-color: var(--color-surface);
+      color: var(--color-text);
+    }
+  
+    &.type-expense.is-active {
+      color: var(--color-expense);
+    }
+  
+    &.type-income.is-active {
+      color: var(--color-income);
+    }
+  }
+  
+  .optional {
+    color: var(--color-text-subtle);
+    font-weight: 400;
+    font-size: var(--text-xs);
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 60px;
+    font-family: inherit;
+  }
