@@ -1,0 +1,54 @@
+:host {
+    display: block;
+  }
+  
+  /* Mobile view: visible by default */
+  .table-wrapper {
+    display: none;
+  }
+  
+  .cards-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  /* Desktop view: 768px+ */
+  @media (min-width: 768px) {
+    .table-wrapper {
+      display: block;
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+  
+    .cards-wrapper {
+      display: none;
+    }
+  }
+  
+  .transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+  
+    thead {
+      background-color: var(--color-surface-2);
+      border-bottom: 1px solid var(--color-border);
+    }
+  
+    th {
+      text-align: left;
+      padding: var(--space-3) var(--space-4);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+    }
+  
+    .th-amount,
+    .th-actions {
+      text-align: right;
+    }
+  }

@@ -1,0 +1,23 @@
+:host {
+    display: block;
+  }
+  
+  .loading-state {
+    text-align: center;
+    padding: var(--space-12);
+    color: var(--color-text-muted);
+  }
+  
+  .load-more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+    padding: var(--space-4);
+  }
+  
+  .load-more-count {
+    font-size: var(--text-xs);
+    color: var(--color-text-subtle);
+  }

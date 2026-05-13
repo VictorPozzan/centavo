@@ -1,0 +1,98 @@
+:host {
+    display: block;
+  }
+  
+  .transaction-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    cursor: pointer;
+    transition: var(--transition-fast);
+  
+    &:hover {
+      border-color: var(--color-border-strong);
+    }
+  }
+  
+  .card-main {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  .card-info {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .card-description {
+    font-weight: 500;
+    font-size: var(--text-sm);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+  }
+  
+  .card-category {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+  }
+  
+  .category-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--radius-full);
+  }
+  
+  .meta-separator {
+    color: var(--color-text-subtle);
+  }
+  
+  .card-amount {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-2);
+    flex-shrink: 0;
+  }
+  
+  .amount {
+    font-weight: 600;
+    color: var(--color-income);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  
+  .amount-expense {
+    color: var(--color-expense);
+  }
+  
+  .card-delete {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+    transition: var(--transition-fast);
+  
+    &:hover {
+      color: var(--color-expense);
+      border-color: var(--color-expense);
+    }
+  }

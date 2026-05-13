@@ -1,0 +1,104 @@
+:host {
+    display: contents;
+  }
+  
+  .transaction-row {
+    td {
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: middle;
+    }
+  
+    &:hover td {
+      background-color: var(--color-surface-2);
+    }
+  }
+  
+  .cell-date {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    white-space: nowrap;
+  }
+  
+  .cell-description {
+    min-width: 0;
+  }
+  
+  .description-main {
+    font-weight: 500;
+  }
+  
+  .description-notes {
+    font-size: var(--text-xs);
+    color: var(--color-text-subtle);
+    margin-top: var(--space-1);
+  }
+  
+  .category-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+  }
+  
+  .category-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+  }
+  
+  .category-empty {
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+    font-style: italic;
+  }
+  
+  .cell-account {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+  
+  .cell-amount {
+    text-align: right;
+    white-space: nowrap;
+  }
+  
+  .amount {
+    font-weight: 600;
+    color: var(--color-income);
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .amount-expense {
+    color: var(--color-expense);
+  }
+  
+  .cell-actions {
+    text-align: right;
+    white-space: nowrap;
+  }
+  
+  .action-btn {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    margin-left: var(--space-1);
+    transition: var(--transition-fast);
+  
+    &:hover {
+      background-color: var(--color-surface-3);
+      color: var(--color-text);
+    }
+  }
+  
+  .action-btn-danger:hover {
+    color: var(--color-expense);
+    border-color: var(--color-expense);
+  }

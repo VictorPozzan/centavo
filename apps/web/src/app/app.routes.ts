@@ -40,6 +40,11 @@ export const appRoutes: Route[] = [
         loadComponent: () =>
           import('./features/categories/categories.page').then((m) => m.CategoriesPage),
       },
+      {
+        path: 'transactions',
+        loadComponent: () =>
+          import('./features/transactions/transactions.page').then((m) => m.TransactionsPage),
+      },
     ],
   },
   { path: '**', redirectTo: 'dashboard' },
