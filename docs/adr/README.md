@@ -48,6 +48,8 @@ If a decision is later replaced, mark the old ADR as `Superseded by ADR-XXXX` in
 | [0007](./0007-token-storage-strategy.md) | Token storage strategy in the browser | Accepted | 2026-05-12 |
 | [0008](./0008-no-ui-component-library.md) | Build UI components in-house instead of adopting a library | Accepted | 2026-05-12 |
 | [0009](./0009-spa-without-server-side-rendering.md) | Build a single-page application without server-side rendering | Accepted | 2026-05-12 |
+| [0010](./0010-strategy-pattern-for-file-parsers.md) | Strategy Pattern for transaction file parsers | Accepted | 2026-05-13 |
+| [0011](./0011-deduplication-by-external-id.md) | Deduplication of imported transactions by external ID | Accepted | 2026-05-13 |
 
 ## Architecture Decisions
 
@@ -62,3 +64,5 @@ Major architectural decisions are documented as [Architecture Decision Records](
 - [ADR-0007](./docs/adr/0007-token-storage-strategy.md) — Why access token in memory + refresh in localStorage
 - [ADR-0008](./docs/adr/0008-no-ui-component-library.md) — Why no Angular Material or PrimeNG
 - [ADR-0009](./docs/adr/0009-spa-without-server-side-rendering.md) — Why pure SPA without SSR
+- [ADR-0010](./docs/adr/0010-strategy-pattern-for-file-parsers.md) — Why Strategy Pattern for the import parsers
+- [ADR-0011](./docs/adr/0011-deduplication-by-external-id.md) — Why deduplication by external ID
