@@ -71,6 +71,9 @@ importers:
       express:
         specifier: ^4.21.2
         version: 4.22.2
+      ofx-js:
+        specifier: ^1.0.0
+        version: 1.0.0
       passport:
         specifier: ^0.7.0
         version: 0.7.0
@@ -6448,6 +6451,9 @@ packages:
 
   obuf@1.1.2:
     resolution: {integrity: sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==}
+
+  ofx-js@1.0.0:
+    resolution: {integrity: sha512-LPyloOOIjz5okIU3r/vPqyPU9PfXJEGJGAJP8NpbWMcgRwkGlcDK15NXU5TU5lgPXM9uqS96CqUoCoULm8P1bw==}
 
   ohash@2.0.11:
     resolution: {integrity: sha512-RdR9FQrFwNBNXAr4GixM8YaRZRJ5PUWbKYbE5eOsrwAjJW0q2REGcf79oYPsLyskQCZG1PLN+S/K1V00joZAoQ==}
@@ -15923,6 +15929,8 @@ snapshots:
   object-inspect@1.13.4: {}
 
   obuf@1.1.2: {}
+
+  ofx-js@1.0.0: {}
 
   ohash@2.0.11: {}
 
