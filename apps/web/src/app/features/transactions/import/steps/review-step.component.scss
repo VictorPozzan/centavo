@@ -1,0 +1,199 @@
+:host {
+    display: block;
+  }
+  
+  .review-step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+  
+  .review-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2);
+  }
+  
+  .review-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-3) var(--space-2);
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+  }
+  
+  .review-stat-value {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .review-stat-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .review-stat-new .review-stat-value {
+    color: var(--color-income);
+  }
+  
+  .review-stat-duplicate .review-stat-value {
+    color: var(--color-warning);
+  }
+  
+  .review-stat-selected .review-stat-value {
+    color: var(--color-primary);
+  }
+  
+  .review-warnings {
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+  
+    summary {
+      cursor: pointer;
+      color: var(--color-warning);
+    }
+  
+    ul {
+      margin-top: var(--space-2);
+      padding-left: var(--space-5);
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+    }
+  }
+  
+  .review-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-height: 360px;
+    overflow-y: auto;
+    padding-right: var(--space-1);
+  }
+  
+  .review-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+  
+    &.is-duplicate {
+      border-color: var(--color-warning);
+      border-style: dashed;
+    }
+  
+    &.is-deselected {
+      opacity: 0.45;
+    }
+  }
+  
+  .review-item-check {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+  }
+  
+  .review-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    min-width: 0;
+  }
+  
+  .review-item-description {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .review-item-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+  
+  .review-item-badge {
+    padding: 2px var(--space-2);
+    background-color: rgba(245, 158, 11, 0.15);
+    color: var(--color-warning);
+    border-radius: var(--radius-sm);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .review-item-category {
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    font-size: var(--text-xs);
+    max-width: 140px;
+  
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  
+  .review-item-amount {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-income);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  
+    &.is-expense {
+      color: var(--color-expense);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .review-summary {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .review-item {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas:
+        'check info amount'
+        'check category category';
+      gap: var(--space-2);
+    }
+  
+    .review-item-check {
+      grid-area: check;
+    }
+  
+    .review-item-info {
+      grid-area: info;
+    }
+  
+    .review-item-amount {
+      grid-area: amount;
+    }
+  
+    .review-item-category {
+      grid-area: category;
+      max-width: none;
+      width: 100%;
+    }
+  }

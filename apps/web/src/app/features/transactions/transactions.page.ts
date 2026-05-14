@@ -15,6 +15,7 @@ import { TransactionListComponent } from './components/transaction-list.componen
 import { TransactionFormComponent } from './components/transaction-form.component';
 import { TransactionsFiltersComponent } from './components/transactions-filters.component';
 import { TransactionsSummaryComponent } from './components/transactions-summary.component';
+import { ImportModalComponent } from './import/import-modal.component';
 import type {
   CreateTransactionPayload,
   ListTransactionsQuery,
@@ -35,6 +36,7 @@ type Mode = 'create' | 'edit' | null;
     TransactionFormComponent,
     TransactionsFiltersComponent,
     TransactionsSummaryComponent,
+    ImportModalComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
@@ -43,9 +45,14 @@ type Mode = 'create' | 'edit' | null;
         <h1 class="page-title">Transactions</h1>
         <p class="page-subtitle">All your income and expenses in one place.</p>
       </div>
-      <button type="button" class="btn-primary" (click)="openCreate()">
-        + New transaction
-      </button>
+      <div class="page-header-actions">
+        <button type="button" class="btn-secondary" (click)="openImport()">
+          Import
+        </button>
+        <button type="button" class="btn-primary" (click)="openCreate()">
+          + New transaction
+        </button>
+      </div>
     </header>
 
     <app-transactions-filters (filtersChange)="onFiltersChange($event)" />
@@ -116,6 +123,14 @@ type Mode = 'create' | 'edit' | null;
         (cancel)="toDelete.set(null)"
       />
     }
+    
+    @if (showImport()) {
+      <app-import-modal
+        (imported)="onImported($event)"
+        (dismiss)="showImport.set(false)"
+      />
+    }
+
   `,
   styleUrl: './transactions.page.scss',
 })
@@ -128,6 +143,7 @@ export class TransactionsPage {
   protected readonly saving = signal(false);
   protected readonly toDelete = signal<Transaction | null>(null);
   protected readonly currentFilters = signal<ListTransactionsQuery>({});
+  protected readonly showImport = signal(false);
 
   protected readonly emptyDescription = () => {
     const filters = this.currentFilters();
@@ -217,5 +233,15 @@ export class TransactionsPage {
         this.toDelete.set(null);
       },
     });
+  }
+
+  openImport(): void {
+    this.showImport.set(true);
+  }
+
+  onImported(count: number): void {
+    this.showImport.set(false);
+    // Reload the list and summary to reflect the imported transactions
+    this.reload();
   }
 }
