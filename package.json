@@ -2,7 +2,18 @@
   "name": "@centavo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "nx run-many -t build --all",
+    "build:api": "nx build api",
+    "build:web": "nx build web",
+    "serve:api": "nx serve api",
+    "serve:web": "nx serve web",
+    "test": "nx run-many -t test --all",
+    "test:ci": "nx run-many -t test --all --configuration=ci",
+    "lint": "nx run-many -t lint --all",
+    "format": "nx format:write",
+    "format:check": "nx format:check"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/core": "~21.2.0",
