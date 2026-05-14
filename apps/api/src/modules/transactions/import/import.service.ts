@@ -11,6 +11,7 @@ import {
   } from './parsers/transaction-parser.interface';
   import { ParsedTransaction, ParserError } from './types';
   import { CommitImportDto } from './dto/commit-import.dto';
+  import { CategorizationService } from './categorization/categorization.service';
   
   export interface ImportPreviewItem {
     externalId: string;
@@ -37,6 +38,7 @@ import {
       private readonly prisma: PrismaService,
       @Inject(TRANSACTION_PARSERS)
       private readonly parsers: TransactionParser[],
+      private readonly categorizationService: CategorizationService,
     ) {}
   
     async preview(
@@ -171,10 +173,10 @@ import {
      * Placeholder for auto-categorization.
      * Will be properly implemented in sub-phase 2.d.
      */
-    private async suggestCategories(
-      _userId: string,
-      _transactions: ParsedTransaction[],
+    private suggestCategories(
+      userId: string,
+      transactions: ParsedTransaction[],
     ): Promise<Map<string, string>> {
-      return new Map();
+      return this.categorizationService.suggest(userId, transactions);
     }
   }
