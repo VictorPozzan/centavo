@@ -1,4 +1,4 @@
-import { HttpInterceptorFn, HttpRequest, HttpHandlerFn } from '@angular/common/http';
+import { HttpInterceptorFn, HttpRequest } from '@angular/common/http';
 import { inject } from '@angular/core';
 import { catchError, switchMap, throwError } from 'rxjs';
 import { TokenStorage } from './token.storage';
@@ -26,7 +26,10 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   );
 };
 
-function addAuthHeader(req: HttpRequest<unknown>, token: string): HttpRequest<unknown> {
+function addAuthHeader(
+  req: HttpRequest<unknown>,
+  token: string,
+): HttpRequest<unknown> {
   return req.clone({
     setHeaders: { Authorization: `Bearer ${token}` },
   });
