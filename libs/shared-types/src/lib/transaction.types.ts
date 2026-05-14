@@ -56,3 +56,37 @@ export interface TransactionSummary {
   incomeCount: number;
   expenseCount: number;
 }
+
+export interface ImportPreviewItem {
+  externalId: string;
+  description: string;
+  amount: number;
+  type: TransactionType;
+  date: string;
+  isDuplicate: boolean;
+  /** Suggested category from auto-categorization, null if no match */
+  suggestedCategoryId: string | null;
+}
+
+export interface ImportPreviewResult {
+  format: 'CSV' | 'OFX';
+  items: ImportPreviewItem[];
+  totalParsed: number;
+  newCount: number;
+  duplicateCount: number;
+  warnings: string[];
+}
+
+export interface CommitImportItem {
+  description: string;
+  amount: number;
+  type: TransactionType;
+  date: string;
+  externalId: string;
+  categoryId: string | null;
+}
+
+export interface CommitImportResult {
+  importedCount: number;
+  skippedCount: number;
+}
