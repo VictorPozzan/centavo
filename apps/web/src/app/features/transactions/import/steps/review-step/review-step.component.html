@@ -1,0 +1,100 @@
+<div class="review-step">
+  <div class="review-summary">
+    <div class="review-stat">
+      <span class="review-stat-value">{{ preview().totalParsed }}</span>
+      <span class="review-stat-label">parsed</span>
+    </div>
+    <div class="review-stat review-stat-new">
+      <span class="review-stat-value">{{ preview().newCount }}</span>
+      <span class="review-stat-label">new</span>
+    </div>
+    <div class="review-stat review-stat-duplicate">
+      <span class="review-stat-value">{{ preview().duplicateCount }}</span>
+      <span class="review-stat-label">duplicates</span>
+    </div>
+    <div class="review-stat review-stat-selected">
+      <span class="review-stat-value">{{ selectedCount() }}</span>
+      <span class="review-stat-label">to import</span>
+    </div>
+  </div>
+
+  @if (preview().warnings.length > 0) {
+    <details class="review-warnings">
+      <summary>
+        {{ preview().warnings.length }} warning(s) during parsing
+      </summary>
+      <ul>
+        @for (warning of preview().warnings; track warning) {
+          <li>{{ warning }}</li>
+        }
+      </ul>
+    </details>
+  }
+
+  <div class="review-list">
+    @for (item of items(); track item.externalId) {
+      <div
+        class="review-item"
+        [class.is-duplicate]="item.isDuplicate"
+        [class.is-deselected]="!item.selected"
+      >
+        <input
+          type="checkbox"
+          class="review-item-check"
+          [checked]="item.selected"
+          (change)="toggleItem(item.externalId)"
+          [attr.aria-label]="'Include ' + item.description"
+        />
+
+        <div class="review-item-info">
+          <span class="review-item-description">{{ item.description }}</span>
+          <span class="review-item-meta">
+            {{ formatItemDate(item.date) }}
+            @if (item.isDuplicate) {
+              <span class="review-item-badge">Already imported</span>
+            }
+          </span>
+        </div>
+
+        <select
+          class="review-item-category"
+          [value]="item.categoryId ?? ''"
+          (change)="onCategoryChange(item.externalId, $event)"
+          [disabled]="!item.selected"
+        >
+          <option value="">No category</option>
+          @for (category of categoriesService.categories(); track category.id) {
+            <option [value]="category.id">{{ category.name }}</option>
+          }
+        </select>
+
+        <span
+          class="review-item-amount"
+          [class.is-expense]="item.type === 'EXPENSE'"
+        >
+          {{ item.type === 'EXPENSE' ? '-' : '+'
+          }}{{ item.amount | centavoCurrency }}
+        </span>
+      </div>
+    }
+  </div>
+
+  <div class="form-actions">
+    <button type="button" class="btn-ghost" (click)="back.emit()">Back</button>
+    <button
+      type="button"
+      class="btn-primary"
+      [disabled]="selectedCount() === 0 || committing()"
+      (click)="confirm()"
+    >
+      {{
+        committing()
+          ? 'Importing…'
+          : 'Import ' +
+            selectedCount() +
+            ' transaction' +
+            (selectedCount() === 1 ? '' : 's')
+      }}
+    </button>
+  </div>
+</div>

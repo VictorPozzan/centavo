@@ -5,23 +5,7 @@ import { ToastService } from './toast.service';
   selector: 'app-toast-host',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <div class="toast-host" aria-live="polite" aria-atomic="true">
-      @for (toast of toastService.toasts(); track toast.id) {
-        <div class="toast" [attr.data-type]="toast.type" role="status">
-          <span class="toast-message">{{ toast.message }}</span>
-          <button
-            type="button"
-            class="toast-dismiss"
-            (click)="toastService.dismiss(toast.id)"
-            aria-label="Dismiss notification"
-          >
-            ×
-          </button>
-        </div>
-      }
-    </div>
-  `,
+  templateUrl: './toast-host.component.html',
   styleUrl: './toast-host.component.scss',
 })
 export class ToastHostComponent {

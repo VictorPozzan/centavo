@@ -1,0 +1,16 @@
+<app-modal [title]="title()" (dismiss)="cancel.emit()">
+  <p class="confirm-message">{{ message() }}</p>
+
+  <div class="confirm-actions">
+    <button type="button" class="btn-ghost" (click)="cancel.emit()">
+      {{ cancelLabel() }}
+    </button>
+    <button
+      type="button"
+      [class]="destructive() ? 'btn-danger' : 'btn-primary'"
+      (click)="confirm.emit()"
+    >
+      {{ confirmLabel() }}
+    </button>
+  </div>
+</app-modal>

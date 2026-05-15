@@ -10,33 +10,7 @@ import {
     selector: 'app-modal',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    template: `
-      <div class="modal-backdrop" (click)="onBackdropClick($event)">
-        <div
-          class="modal-content"
-          role="dialog"
-          aria-modal="true"
-          [attr.aria-labelledby]="titleId()"
-          (click)="$event.stopPropagation()"
-        >
-          <header class="modal-header">
-            <h2 [id]="titleId()" class="modal-title">{{ title() }}</h2>
-            <button
-              type="button"
-              class="modal-close"
-              aria-label="Close dialog"
-              (click)="dismiss.emit()"
-            >
-              ×
-            </button>
-          </header>
-  
-          <div class="modal-body">
-            <ng-content></ng-content>
-          </div>
-        </div>
-      </div>
-    `,
+    templateUrl: './modal.component.html',
     styleUrl: './modal.component.scss',
   })
   export class ModalComponent {

@@ -1,0 +1,35 @@
+<!-- Desktop view: table -->
+<div class="table-wrapper">
+  <table class="transactions-table">
+    <thead>
+      <tr>
+        <th class="th-date">Date</th>
+        <th class="th-description">Description</th>
+        <th class="th-category">Category</th>
+        <th class="th-account">Account</th>
+        <th class="th-amount">Amount</th>
+        <th class="th-actions"><span class="sr-only">Actions</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (transaction of transactions(); track transaction.id) {
+        <app-transaction-row
+          [transaction]="transaction"
+          (edit)="edit.emit($event)"
+          (remove)="remove.emit($event)"
+        />
+      }
+    </tbody>
+  </table>
+</div>
+
+<!-- Mobile view: cards -->
+<div class="cards-wrapper">
+  @for (transaction of transactions(); track transaction.id) {
+    <app-transaction-card
+      [transaction]="transaction"
+      (edit)="edit.emit($event)"
+      (remove)="remove.emit($event)"
+    />
+  }
+</div>

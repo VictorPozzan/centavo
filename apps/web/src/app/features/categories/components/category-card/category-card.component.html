@@ -1,0 +1,26 @@
+<article class="category-card">
+  <div
+    class="category-card-color"
+    [style.background-color]="category().color"
+    aria-hidden="true"
+  ></div>
+  <h3 class="category-card-name">{{ category().name }}</h3>
+  <div class="category-card-actions">
+    <button
+      type="button"
+      class="action-btn"
+      (click)="edit.emit(category())"
+      aria-label="Edit category"
+    >
+      ✎
+    </button>
+    <button
+      type="button"
+      class="action-btn action-btn-danger"
+      (click)="remove.emit(category())"
+      aria-label="Delete category"
+    >
+      🗑
+    </button>
+  </div>
+</article>

@@ -1,0 +1,11 @@
+.confirm-message {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-6);
+  }
+
+  .confirm-actions {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: flex-end;
+  }

@@ -10,14 +10,14 @@ import {
   } from '@angular/core';
   import { CommonModule } from '@angular/common';
   import { FormsModule } from '@angular/forms';
-  import { AccountsService } from '../../accounts/accounts.service';
-  import { CategoriesService } from '../../categories/categories.service';
+  import { AccountsService } from '../../../accounts/accounts.service';
+  import { CategoriesService } from '../../../categories/categories.service';
   import {
     endOfMonth,
     fromDateInput,
     startOfMonth,
     toDateInput,
-  } from '../../../shared/utils/format';
+  } from '../../../../shared/utils/format';
   import type {
     ListTransactionsQuery,
     TransactionType,
@@ -31,100 +31,7 @@ import {
     standalone: true,
     imports: [CommonModule, FormsModule],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    template: `
-      <section class="filters">
-        <div class="filter-group">
-          <label for="period">Period</label>
-          <select id="period" [ngModel]="preset()" (ngModelChange)="onPresetChange($event)">
-            <option value="this-month">This month</option>
-            <option value="last-month">Last month</option>
-            <option value="last-30-days">Last 30 days</option>
-            <option value="last-3-months">Last 3 months</option>
-            <option value="all">All time</option>
-            <option value="custom">Custom range</option>
-          </select>
-        </div>
-  
-        @if (preset() === 'custom') {
-          <div class="filter-group">
-            <label for="start-date">From</label>
-            <input
-              id="start-date"
-              type="date"
-              [ngModel]="customStart()"
-              (ngModelChange)="onCustomStartChange($event)"
-            />
-          </div>
-          <div class="filter-group">
-            <label for="end-date">To</label>
-            <input
-              id="end-date"
-              type="date"
-              [ngModel]="customEnd()"
-              (ngModelChange)="onCustomEndChange($event)"
-            />
-          </div>
-        }
-  
-        <div class="filter-group">
-          <label>Type</label>
-          <div class="type-segmented">
-            <button
-              type="button"
-              class="segment-btn"
-              [class.is-active]="typeFilter() === 'ALL'"
-              (click)="onTypeChange('ALL')"
-            >
-              All
-            </button>
-            <button
-              type="button"
-              class="segment-btn"
-              [class.is-active]="typeFilter() === 'INCOME'"
-              (click)="onTypeChange('INCOME')"
-            >
-              Income
-            </button>
-            <button
-              type="button"
-              class="segment-btn"
-              [class.is-active]="typeFilter() === 'EXPENSE'"
-              (click)="onTypeChange('EXPENSE')"
-            >
-              Expense
-            </button>
-          </div>
-        </div>
-  
-        <div class="filter-group">
-          <label for="account-filter">Account</label>
-          <select
-            id="account-filter"
-            [ngModel]="accountFilter()"
-            (ngModelChange)="onAccountChange($event)"
-          >
-            <option [ngValue]="null">All accounts</option>
-            @for (account of accountsService.accounts(); track account.id) {
-              <option [value]="account.id">{{ account.name }}</option>
-            }
-          </select>
-        </div>
-  
-        <div class="filter-group">
-          <label for="category-filter">Category</label>
-          <select
-            id="category-filter"
-            [ngModel]="categoryFilter()"
-            (ngModelChange)="onCategoryChange($event)"
-          >
-            <option [ngValue]="null">All categories</option>
-            @for (category of categoriesService.categories(); track category.id) {
-              <option [value]="category.id">{{ category.name }}</option>
-            }
-          </select>
-        </div>
-      </section>
-    `,
+    templateUrl: './transactions-filters.component.html',
     styleUrl: './transactions-filters.component.scss',
   })
   export class TransactionsFiltersComponent implements OnInit {

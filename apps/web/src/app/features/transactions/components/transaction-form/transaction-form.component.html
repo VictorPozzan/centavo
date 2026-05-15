@@ -1,0 +1,122 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div class="form-group">
+      <label>Type</label>
+      <div class="type-toggle">
+        <button
+          type="button"
+          class="type-btn"
+          [class.is-active]="form.value.type === 'EXPENSE'"
+          [class.type-expense]="form.value.type === 'EXPENSE'"
+          (click)="form.patchValue({ type: 'EXPENSE' })"
+        >
+          Expense
+        </button>
+        <button
+          type="button"
+          class="type-btn"
+          [class.is-active]="form.value.type === 'INCOME'"
+          [class.type-income]="form.value.type === 'INCOME'"
+          (click)="form.patchValue({ type: 'INCOME' })"
+        >
+          Income
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="tx-description">Description</label>
+    <input
+      id="tx-description"
+      type="text"
+      formControlName="description"
+      [class.has-error]="hasError('description')"
+      placeholder="e.g. Lunch, Salary, Netflix"
+      autocomplete="off"
+    />
+    @if (hasError('description')) {
+      <span class="field-error">Description is required</span>
+    }
+  </div>
+
+  <div class="form-row form-row-2">
+    <div class="form-group">
+      <label for="tx-amount">Amount</label>
+      <input
+        id="tx-amount"
+        type="number"
+        step="0.01"
+        min="0.01"
+        formControlName="amount"
+        [class.has-error]="hasError('amount')"
+        placeholder="0.00"
+      />
+      @if (hasError('amount')) {
+        <span class="field-error">Amount must be greater than 0</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="tx-date">Date</label>
+      <input
+        id="tx-date"
+        type="date"
+        formControlName="date"
+        [class.has-error]="hasError('date')"
+      />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="tx-account">Account</label>
+    <select
+      id="tx-account"
+      formControlName="accountId"
+      [class.has-error]="hasError('accountId')"
+    >
+      <option value="" disabled>Select an account</option>
+      @for (account of accountsService.accounts(); track account.id) {
+        <option [value]="account.id">{{ account.name }}</option>
+      }
+    </select>
+    @if (accountsService.count() === 0) {
+      <span class="field-hint"> You need to create an account first. </span>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="tx-category"
+      >Category <span class="optional">(optional)</span></label
+    >
+    <select id="tx-category" formControlName="categoryId">
+      <option [ngValue]="null">No category</option>
+      @for (category of categoriesService.categories(); track category.id) {
+        <option [value]="category.id">{{ category.name }}</option>
+      }
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="tx-notes">Notes <span class="optional">(optional)</span></label>
+    <textarea
+      id="tx-notes"
+      formControlName="notes"
+      rows="2"
+      placeholder="Any extra detail…"
+    ></textarea>
+  </div>
+
+  <div class="form-actions">
+    <button type="button" class="btn-ghost" (click)="cancel.emit()">
+      Cancel
+    </button>
+    <button
+      type="submit"
+      class="btn-primary"
+      [disabled]="form.invalid || saving() || accountsService.count() === 0"
+    >
+      {{ saving() ? 'Saving…' : submitLabel() }}
+    </button>
+  </div>
+</form>

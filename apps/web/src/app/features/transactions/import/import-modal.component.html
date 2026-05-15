@@ -1,0 +1,21 @@
+<app-modal [title]="modalTitle()" (dismiss)="onDismiss()">
+  @if (step() === 'upload') {
+    <app-upload-step
+      (submitUpload)="onUploadSubmit($event)"
+      (cancel)="onDismiss()"
+    />
+  } @else if (step() === 'review' && preview()) {
+    <app-review-step
+      [preview]="preview()!"
+      [committing]="committing()"
+      (back)="onBack()"
+      (confirmImport)="onConfirmImport($event)"
+    />
+  }
+
+  @if (step() === 'upload' && loadingPreview()) {
+    <div class="import-loading">
+      <span>Parsing file…</span>
+    </div>
+  }
+</app-modal>

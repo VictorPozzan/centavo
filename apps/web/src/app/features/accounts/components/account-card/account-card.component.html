@@ -1,0 +1,25 @@
+<article class="account-card">
+  <div class="account-card-icon">{{ icon() }}</div>
+  <div class="account-card-info">
+    <h3 class="account-card-name">{{ account().name }}</h3>
+    <p class="account-card-type">{{ typeLabel() }}</p>
+  </div>
+  <div class="account-card-actions">
+    <button
+      type="button"
+      class="action-btn"
+      (click)="edit.emit(account())"
+      aria-label="Edit account"
+    >
+      ✎
+    </button>
+    <button
+      type="button"
+      class="action-btn action-btn-danger"
+      (click)="remove.emit(account())"
+      aria-label="Delete account"
+    >
+      🗑
+    </button>
+  </div>
+</article>

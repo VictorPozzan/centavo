@@ -24,50 +24,7 @@ import {
     standalone: true,
     imports: [CommonModule, ReactiveFormsModule],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    template: `
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="account-name">Name</label>
-          <input
-            id="account-name"
-            type="text"
-            formControlName="name"
-            [class.has-error]="hasError('name')"
-            autocomplete="off"
-            placeholder="e.g. Nubank, Main Checking"
-          />
-          @if (hasError('name')) {
-            <span class="field-error">Name is required</span>
-          }
-        </div>
-  
-        <div class="form-group">
-          <label for="account-type">Type</label>
-          <select
-            id="account-type"
-            formControlName="type"
-            [class.has-error]="hasError('type')"
-          >
-            @for (option of accountTypes; track option.value) {
-              <option [value]="option.value">{{ option.label }}</option>
-            }
-          </select>
-        </div>
-  
-        <div class="form-actions">
-          <button type="button" class="btn-ghost" (click)="cancel.emit()">
-            Cancel
-          </button>
-          <button
-            type="submit"
-            class="btn-primary"
-            [disabled]="form.invalid || saving()"
-          >
-            {{ saving() ? 'Saving…' : submitLabel() }}
-          </button>
-        </div>
-      </form>
-    `,
+    templateUrl: './account-form.component.html',
   })
   export class AccountFormComponent {
     private readonly fb = inject(FormBuilder);

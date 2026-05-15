@@ -11,10 +11,10 @@ import { ConfirmDialogComponent } from '../../shared/ui/confirm-dialog/confirm-d
 import { EmptyStateComponent } from '../../shared/ui/empty-state/empty-state.component';
 import { ToastService } from '../../shared/ui/toast/toast.service';
 import { TransactionsService } from './transactions.service';
-import { TransactionListComponent } from './components/transaction-list.component';
-import { TransactionFormComponent } from './components/transaction-form.component';
-import { TransactionsFiltersComponent } from './components/transactions-filters.component';
-import { TransactionsSummaryComponent } from './components/transactions-summary.component';
+import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
+import { TransactionFormComponent } from './components/transaction-form/transaction-form.component';
+import { TransactionsFiltersComponent } from './components/transactions-filters/transactions-filters.component';
+import { TransactionsSummaryComponent } from './components/transactions-summary/transactions-summary.component';
 import { ImportModalComponent } from './import/import-modal.component';
 import type {
   CreateTransactionPayload,
@@ -39,99 +39,7 @@ type Mode = 'create' | 'edit' | null;
     ImportModalComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <header class="page-header">
-      <div>
-        <h1 class="page-title">Transactions</h1>
-        <p class="page-subtitle">All your income and expenses in one place.</p>
-      </div>
-      <div class="page-header-actions">
-        <button type="button" class="btn-secondary" (click)="openImport()">
-          Import
-        </button>
-        <button type="button" class="btn-primary" (click)="openCreate()">
-          + New transaction
-        </button>
-      </div>
-    </header>
-
-    <app-transactions-filters (filtersChange)="onFiltersChange($event)" />
-
-    <app-transactions-summary [summary]="transactionsService.summary()" />
-
-    @if (transactionsService.loading() && transactionsService.count() === 0) {
-      <p class="loading-state">Loading transactions…</p>
-    } @else if (transactionsService.count() === 0) {
-      <app-empty-state
-        icon="💸"
-        title="No transactions found"
-        [description]="emptyDescription()"
-      >
-        <button type="button" class="btn-primary" (click)="openCreate()">
-          Add a transaction
-        </button>
-      </app-empty-state>
-    } @else {
-      <app-transaction-list
-        [transactions]="transactionsService.transactions()"
-        (edit)="openEdit($event)"
-        (remove)="confirmRemove($event)"
-      />
-
-      @if (transactionsService.hasMore()) {
-        <div class="load-more">
-          <button
-            type="button"
-            class="btn-secondary"
-            (click)="loadMore()"
-            [disabled]="transactionsService.loadingMore()"
-          >
-            {{ transactionsService.loadingMore() ? 'Loading…' : 'Load more' }}
-          </button>
-          <p class="load-more-count">
-            Showing {{ transactionsService.count() }} of {{ transactionsService.total() }}
-          </p>
-        </div>
-      }
-    }
-
-    @if (mode() !== null) {
-      <app-modal
-        [title]="mode() === 'create' ? 'New transaction' : 'Edit transaction'"
-        (dismiss)="closeModal()"
-      >
-        <app-transaction-form
-          [transaction]="editing()"
-          [saving]="saving()"
-          (submit)="onSubmit($event)"
-          (cancel)="closeModal()"
-        />
-      </app-modal>
-    }
-
-    @if (toDelete()) {
-      <app-confirm-dialog
-        title="Delete transaction"
-        [message]="
-          'Delete \\'' +
-          toDelete()!.description +
-          '\\'? This cannot be undone.'
-        "
-        confirmLabel="Delete"
-        [destructive]="true"
-        (confirm)="performDelete()"
-        (cancel)="toDelete.set(null)"
-      />
-    }
-    
-    @if (showImport()) {
-      <app-import-modal
-        (imported)="onImported($event)"
-        (dismiss)="showImport.set(false)"
-      />
-    }
-
-  `,
+  templateUrl: './transactions.page.html',
   styleUrl: './transactions.page.scss',
 })
 export class TransactionsPage {
@@ -215,6 +123,13 @@ export class TransactionsPage {
 
   confirmRemove(transaction: Transaction): void {
     this.toDelete.set(transaction);
+  }
+
+  protected deleteMessage(): string {
+    const transaction = this.toDelete();
+    return transaction
+      ? `Delete '${transaction.description}'? This cannot be undone.`
+      : 'Delete this transaction? This cannot be undone.';
   }
 
   performDelete(): void {

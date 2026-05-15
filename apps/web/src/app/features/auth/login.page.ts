@@ -9,66 +9,7 @@ import { AuthService } from '../../core/auth/auth.service';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `
-    <main class="auth-layout">
-      <div class="auth-card">
-        <div class="auth-brand">
-          <span class="auth-brand-mark">¢</span>
-          <h1 class="auth-brand-name">Centavo</h1>
-        </div>
-
-        <h2 class="auth-title">Sign in to your account</h2>
-        <p class="auth-subtitle">Welcome back. Enter your credentials to continue.</p>
-
-        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="auth-form">
-          <div class="field">
-            <label for="email">Email</label>
-            <input
-              id="email"
-              type="email"
-              autocomplete="email"
-              formControlName="email"
-              [class.has-error]="hasError('email')"
-            />
-            @if (hasError('email')) {
-              <span class="field-error">Please enter a valid email</span>
-            }
-          </div>
-
-          <div class="field">
-            <label for="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              autocomplete="current-password"
-              formControlName="password"
-              [class.has-error]="hasError('password')"
-            />
-            @if (hasError('password')) {
-              <span class="field-error">Password is required</span>
-            }
-          </div>
-
-          @if (errorMessage()) {
-            <div class="form-error" role="alert">{{ errorMessage() }}</div>
-          }
-
-          <button
-            type="submit"
-            class="btn-primary"
-            [disabled]="loading() || form.invalid"
-          >
-            {{ loading() ? 'Signing in…' : 'Sign in' }}
-          </button>
-        </form>
-
-        <p class="auth-footer">
-          New to Centavo?
-          <a routerLink="/register">Create an account</a>
-        </p>
-      </div>
-    </main>
-  `,
+  templateUrl: './login.page.html',
   styleUrl: './auth.shared.scss',
 })
 export class LoginPage {

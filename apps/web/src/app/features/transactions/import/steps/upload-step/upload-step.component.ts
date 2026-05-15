@@ -5,7 +5,7 @@ import {
     output,
     signal,
   } from '@angular/core';
-  import { AccountsService } from '../../../accounts/accounts.service';
+  import { AccountsService } from '../../../../accounts/accounts.service';
   
   export interface UploadSubmit {
     file: File;
@@ -19,90 +19,8 @@ import {
     selector: 'app-upload-step',
     standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    template: `
-      <div class="upload-step">
-        <div class="form-group">
-          <label for="import-account">Import into account</label>
-          <select
-            id="import-account"
-            [value]="selectedAccountId()"
-            (change)="onAccountChange($event)"
-          >
-            <option value="" disabled>Select an account</option>
-            @for (account of accountsService.accounts(); track account.id) {
-              <option [value]="account.id">{{ account.name }}</option>
-            }
-          </select>
-          @if (accountsService.count() === 0) {
-            <span class="field-hint">
-              You need to create an account before importing.
-            </span>
-          }
-        </div>
-  
-        <div
-          class="dropzone"
-          [class.is-dragging]="isDragging()"
-          [class.has-error]="error()"
-          (dragover)="onDragOver($event)"
-          (dragleave)="onDragLeave($event)"
-          (drop)="onDrop($event)"
-        >
-          <input
-            #fileInput
-            type="file"
-            class="dropzone-input"
-            accept=".csv,.tsv,.ofx,.qfx"
-            (change)="onFileSelected($event)"
-          />
-  
-          @if (selectedFile()) {
-            <div class="dropzone-file">
-              <span class="dropzone-file-icon">📄</span>
-              <div class="dropzone-file-info">
-                <span class="dropzone-file-name">{{ selectedFile()!.name }}</span>
-                <span class="dropzone-file-size">{{ formatSize(selectedFile()!.size) }}</span>
-              </div>
-              <button
-                type="button"
-                class="dropzone-file-remove"
-                (click)="clearFile()"
-                aria-label="Remove file"
-              >
-                ×
-              </button>
-            </div>
-          } @else {
-            <div class="dropzone-empty" (click)="fileInput.click()">
-              <span class="dropzone-icon">📁</span>
-              <p class="dropzone-text">
-                <strong>Click to choose</strong> or drag a file here
-              </p>
-              <p class="dropzone-hint">CSV, TSV, OFX or QFX — up to 2 MB</p>
-            </div>
-          }
-        </div>
-  
-        @if (error()) {
-          <p class="upload-error" role="alert">{{ error() }}</p>
-        }
-  
-        <div class="form-actions">
-          <button type="button" class="btn-ghost" (click)="cancel.emit()">
-            Cancel
-          </button>
-          <button
-            type="button"
-            class="btn-primary"
-            [disabled]="!canSubmit()"
-            (click)="submit()"
-          >
-            Preview import
-          </button>
-        </div>
-      </div>
-    `,
-    styleUrl: '../import-modal.component.scss',
+    templateUrl: './upload-step.component.html',
+    styleUrl: '../../import-modal.component.scss',
   })
   export class UploadStepComponent {
     protected readonly accountsService = inject(AccountsService);

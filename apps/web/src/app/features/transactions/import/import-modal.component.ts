@@ -10,8 +10,8 @@ import {
   import { AccountsService } from '../../accounts/accounts.service';
   import { CategoriesService } from '../../categories/categories.service';
   import { ImportService } from './import.service';
-  import { UploadStepComponent, UploadSubmit } from './steps/upload-step.component';
-  import { ReviewStepComponent, ReviewedItem } from './steps/review-step.component';
+  import { UploadStepComponent, UploadSubmit } from './steps/upload-step/upload-step.component';
+  import { ReviewStepComponent, ReviewedItem } from './steps//review-step/review-step.component';
   import type { ImportPreviewResult } from '@centavo/shared-types';
   
   type Step = 'upload' | 'review';
@@ -21,39 +21,8 @@ import {
     standalone: true,
     imports: [ModalComponent, UploadStepComponent, ReviewStepComponent],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    template: `
-      <app-modal [title]="modalTitle()" (dismiss)="onDismiss()">
-        @if (step() === 'upload') {
-          <app-upload-step
-            (submitUpload)="onUploadSubmit($event)"
-            (cancel)="onDismiss()"
-          />
-        } @else if (step() === 'review' && preview()) {
-          <app-review-step
-            [preview]="preview()!"
-            [committing]="committing()"
-            (back)="onBack()"
-            (confirmImport)="onConfirmImport($event)"
-          />
-        }
-  
-        @if (step() === 'upload' && loadingPreview()) {
-          <div class="import-loading">
-            <span>Parsing file…</span>
-          </div>
-        }
-      </app-modal>
-    `,
-    styles: [
-      `
-        .import-loading {
-          text-align: center;
-          padding: var(--space-4);
-          color: var(--color-text-muted);
-          font-size: var(--text-sm);
-        }
-      `,
-    ],
+    templateUrl: './import-modal.component.html',
+    styleUrl: './import-modal.component.scss',
   })
   export class ImportModalComponent {
     private readonly importService = inject(ImportService);

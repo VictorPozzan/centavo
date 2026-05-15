@@ -1,0 +1,21 @@
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-2);
+  }
+
+  .color-swatch {
+    aspect-ratio: 1;
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    transition: var(--transition-fast);
+
+    &.is-selected {
+      border-color: var(--color-text);
+      transform: scale(1.05);
+    }
+
+    &:hover:not(.is-selected) {
+      transform: scale(1.05);
+    }
+  }

@@ -11,8 +11,8 @@ import {
   import { EmptyStateComponent } from '../../shared/ui/empty-state/empty-state.component';
   import { ToastService } from '../../shared/ui/toast/toast.service';
   import { AccountsService } from './accounts.service';
-  import { AccountFormComponent } from './components/account-form.component';
-  import { AccountCardComponent } from './components/account-card.component';
+  import { AccountFormComponent } from './components/account-form/account-form.component';
+  import { AccountCardComponent } from './components/account-card/account-card.component';
   import type { Account, CreateAccountPayload } from '@centavo/shared-types';
   
   type Mode = 'create' | 'edit' | null;
@@ -29,72 +29,7 @@ import {
       AccountCardComponent,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    template: `
-      <header class="page-header">
-        <div>
-          <h1 class="page-title">Accounts</h1>
-          <p class="page-subtitle">
-            Manage where your money lives — checking, savings, cards, cash.
-          </p>
-        </div>
-        <button type="button" class="btn-primary" (click)="openCreate()">
-          + New account
-        </button>
-      </header>
-  
-      @if (accountsService.loading() && accountsService.count() === 0) {
-        <p class="loading-state">Loading accounts…</p>
-      } @else if (accountsService.count() === 0) {
-        <app-empty-state
-          icon="🏦"
-          title="No accounts yet"
-          description="Add your first account to start tracking transactions."
-        >
-          <button type="button" class="btn-primary" (click)="openCreate()">
-            Create your first account
-          </button>
-        </app-empty-state>
-      } @else {
-        <div class="accounts-grid">
-          @for (account of accountsService.accounts(); track account.id) {
-            <app-account-card
-              [account]="account"
-              (edit)="openEdit($event)"
-              (remove)="confirmRemove($event)"
-            />
-          }
-        </div>
-      }
-  
-      @if (mode() !== null) {
-        <app-modal
-          [title]="mode() === 'create' ? 'New account' : 'Edit account'"
-          (dismiss)="closeModal()"
-        >
-          <app-account-form
-            [account]="editing()"
-            [saving]="saving()"
-            (submit)="onSubmit($event)"
-            (cancel)="closeModal()"
-          />
-        </app-modal>
-      }
-  
-      @if (toDelete()) {
-        <app-confirm-dialog
-          title="Delete account"
-          [message]="
-            'Delete the account ' +
-            toDelete()!.name +
-            '? All related transactions will also be deleted. This cannot be undone.'
-          "
-          confirmLabel="Delete"
-          [destructive]="true"
-          (confirm)="performDelete()"
-          (cancel)="toDelete.set(null)"
-        />
-      }
-    `,
+    templateUrl: './accounts.page.html',
     styleUrl: './accounts.page.scss',
   })
   export class AccountsPage implements OnInit {
