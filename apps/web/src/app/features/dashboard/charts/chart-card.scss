@@ -1,0 +1,103 @@
+:host {
+    display: block;
+  }
+  
+  .chart-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    min-height: 380px;
+  }
+  
+  .chart-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  
+  .chart-title {
+    font-size: var(--text-base);
+    font-weight: 600;
+  }
+  
+  .chart-subtitle {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+  
+  .chart-canvas-wrapper {
+    position: relative;
+    flex: 1;
+    min-height: 280px;
+  }
+  
+  .chart-empty {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-subtle);
+    font-size: var(--text-sm);
+  }
+  
+  /* Donut-specific layout */
+  .donut-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    flex: 1;
+  
+    @media (min-width: 480px) {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+    }
+  }
+  
+  .donut-canvas-wrapper {
+    position: relative;
+    min-height: 220px;
+    max-height: 260px;
+  }
+  
+  .donut-legend {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    max-height: 260px;
+    overflow-y: auto;
+  }
+  
+  .donut-legend-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-xs);
+  }
+  
+  .donut-legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+  }
+  
+  .donut-legend-name {
+    color: var(--color-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .donut-legend-value {
+    color: var(--color-text-muted);
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+  }

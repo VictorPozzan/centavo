@@ -16,8 +16,8 @@
 } @else if (dashboardService.data(); as data) {
   <app-kpi-cards [totals]="data.totals" />
 
-  <!-- Charts will go here in sub-phase 3.c -->
-  <section class="charts-placeholder">
-    <p>Charts coming next.</p>
+  <section class="charts-grid">
+    <app-cashflow-chart [data]="data.balanceTimeline" />
+    <app-category-donut [data]="data.expensesByCategory" />
   </section>
 }
