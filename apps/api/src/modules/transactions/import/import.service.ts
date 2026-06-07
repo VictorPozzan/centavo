@@ -71,7 +71,6 @@ import {
       });
       const existingIds = new Set(existing.map((e) => e.externalId));
   
-      // Auto-categorization based on user's history (implemented in 2.d).
       // For now, no suggestions — placeholder returns null for everything.
       const suggestions = await this.suggestCategories(userId, parsed);
   
@@ -171,7 +170,6 @@ import {
   
     /**
      * Placeholder for auto-categorization.
-     * Will be properly implemented in sub-phase 2.d.
      */
     private suggestCategories(
       userId: string,

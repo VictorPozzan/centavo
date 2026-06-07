@@ -1,4 +1,23 @@
 <div class="placeholder">
   <h1>Welcome back, {{ authService.user()?.name }}.</h1>
-  <p>Your dashboard will appear here. For now, explore the menu.</p>
 </div>
+<header class="page-header">
+  <div>
+    <h1 class="page-title">Dashboard</h1>
+    <p class="page-subtitle">Your financial overview at a glance.</p>
+  </div>
+  <app-period-selector (queryChange)="onPeriodChange($event)" />
+</header>
+
+@if (dashboardService.loading() && !dashboardService.data()) {
+  <p class="loading-state">Loading dashboard…</p>
+} @else if (dashboardService.error()) {
+  <p class="error-state">{{ dashboardService.error() }}</p>
+} @else if (dashboardService.data(); as data) {
+  <app-kpi-cards [totals]="data.totals" />
+
+  <!-- Charts will go here in sub-phase 3.c -->
+  <section class="charts-placeholder">
+    <p>Charts coming next.</p>
+  </section>
+}
