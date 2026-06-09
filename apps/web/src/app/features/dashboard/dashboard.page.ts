@@ -6,6 +6,8 @@ import {
 import { CommonModule } from '@angular/common';
 import { CashflowChartComponent } from './charts/cashflow-chart.component';
 import { CategoryDonutComponent } from './charts/category-donut.component';
+import { TopCategoriesComponent } from './components/top-categories.component';
+import { MonthlyComparisonComponent } from './charts/monthly-comparison.component';
 import { DashboardService } from './dashboard.service';
 import { AuthService } from '../../core/auth/auth.service';
 import { PeriodSelectorComponent } from './components/period-selector/period-selector.component';
@@ -23,6 +25,8 @@ import type { DashboardQuery } from '@centavo/shared-types';
     KpiCardsComponent,
     CashflowChartComponent,
     CategoryDonutComponent,
+    TopCategoriesComponent,
+    MonthlyComparisonComponent,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './dashboard.page.html',

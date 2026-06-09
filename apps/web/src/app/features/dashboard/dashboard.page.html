@@ -20,4 +20,14 @@
     <app-cashflow-chart [data]="data.balanceTimeline" />
     <app-category-donut [data]="data.expensesByCategory" />
   </section>
+
+  <section class="charts-grid">
+    <app-cashflow-chart [data]="data.balanceTimeline" />
+    <app-category-donut [data]="data.expensesByCategory" />
+  </section>
+  
+  <section class="bottom-grid">
+    <app-top-categories [data]="data.topCategories" />
+    <app-monthly-comparison [data]="data.monthlyComparison" />
+  </section>
 }
